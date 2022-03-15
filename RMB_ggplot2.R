@@ -84,7 +84,7 @@ p <- p + geom_point()
 p
 
 # Añadiendo transformaciones estadisticas de los datos. En este caso estamos usando una recta ajustada por cuadrados minimos
-p <-p + geom_smooth(method="lm")
+p <- p + geom_smooth(method="lm")
 p
 
 ### Hazlo en una linea
@@ -175,7 +175,31 @@ ggplot(data= cdrs_melt, aes(x= V.GENE, y= value, fill= V.GENE)) +
   geom_boxplot() +
   facet_wrap(~variable) +
   scale_fill_brewer(palette = "Set1")
-  
+
+ggplot(data= cdrs_melt, aes(x= V.GENE, y= value, fill= V.GENE)) +
+  geom_boxplot() +
+  facet_wrap(~variable) +
+  scale_fill_brewer(palette = "Reds")
+
+ggplot(data= cdrs_melt, aes(x= V.GENE, y= value, fill= V.GENE)) +
+  geom_boxplot() +
+  facet_wrap(~variable) +
+  scale_fill_brewer(palette = "PiYG")
+
+ggplot(data= cdrs_melt, aes(x= V.GENE, y= value, fill= V.GENE)) +
+  geom_boxplot() +
+  facet_wrap(~variable) +
+  scale_fill_brewer(palette = "PiYG",direction = -1)
+
+ggplot(data= cdrs_melt, aes(x= V.GENE, y= value, fill= V.GENE)) +
+  geom_boxplot() +
+  facet_wrap(~variable) +
+  scale_fill_brewer(palette = 3,direction = -1)
+
+
+RColorBrewer::brewer.pal(5,name = "Reds")
+View(RColorBrewer::brewer.pal.info) 
+
 # Cambiar colores de manera manual
 ggplot(data= cdrs_melt, aes(x= V.GENE, y= value, fill= V.GENE)) +
   geom_boxplot() +
@@ -197,6 +221,13 @@ ggplot(data= cdrs_melt, aes(x= V.GENE, y= value, fill= V.GENE)) +
   scale_fill_manual(values=c("deepskyblue", "seagreen2", "salmon")) +
   labs(title="CDRs Length", y="length (nt)", x="", fill="") +
   theme_linedraw()
+
+ggplot(data= cdrs_melt, aes(x= V.GENE, y= value, fill= V.GENE)) +
+  geom_boxplot() +
+  facet_wrap(~variable) +
+  scale_fill_manual(values=c("deepskyblue", "seagreen2", "salmon")) +
+  labs(title="CDRs Length", y="length (nt)", x="", fill="") +
+  theme_linedraw(base_size = 16)
 
 # Cambiar la posicion de la leyenda
 ggplot(data= cdrs_melt, aes(x= V.GENE, y= value, fill= V.GENE)) +
