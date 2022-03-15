@@ -11,7 +11,7 @@ Fecha: viernes 12 de noviembre de 2021
 ## Pre-requisitos:
 
 Para poder seguir este material, necesitarás instalar las siguientes paqueterías de R:
-- dplyr, usando el comando install.packages("dplyr")
+
 - ggplot2, usando el comando install.packages("ggplot2")
 - reshape2, usando el comando install.packages("reshape2")
 - viridis, usando el comando install.packages("viridis")
